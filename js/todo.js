@@ -12,7 +12,7 @@ function saveToDos() {
 
 function deleteToDo(event) {
   const li = event.target.parentElement;
-  toDos.splice(toDos.findIndex(i => i.id === li.id), 1)
+  toDos.splice(toDos.findIndex(i => String(i.id) === li.id), 1)
   localStorage.setItem(TODOS_KEY, JSON.stringify(toDos));
   li.remove();
 }
